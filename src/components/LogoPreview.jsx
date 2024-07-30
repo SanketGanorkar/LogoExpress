@@ -3,7 +3,7 @@ import { UpdateStorageContext } from "@/context/UpdateStorageContext.jsx";
 import { icons } from "lucide-react";
 import html2canvas from "html2canvas";
 
-const LogoPreview = ({ downloadIcon }) => {
+const LogoPreview = ({ downloadIcon, menuBar }) => {
   const [storageValue, setStorageValue] = useState();
   const { updateStorage, setUpdateStorage } = useContext(UpdateStorageContext);
 
@@ -51,7 +51,7 @@ const LogoPreview = ({ downloadIcon }) => {
     );
   };
   return (
-    <div className="flex items-center justify-center h-screen">
+    <div className={`flex items-center ${menuBar?"sm:justify-end":"justify-center"} max-sm:justify-center max-sm:items-end max-sm:pb-16 h-screen`}>
       <div
         className="h-[500px] w-[500px] bg-gray-200 outline-dotted outline-gray-300"
         style={{
